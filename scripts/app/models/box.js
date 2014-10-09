@@ -1,4 +1,4 @@
-define(['backbone'], function(Backbone, BoxModel) {
+define(['backbone'], function(Backbone) {
 	return Backbone.Model.extend({
 		defaults: {
 			'yo': 'lo',

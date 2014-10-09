@@ -1,4 +1,6 @@
 define(['backbone', 'app/models/box'], function(Backbone, BoxModel) {
+
+	// Dumb Model for testing
 	return Backbone.View.extend({
 		initialize: function() {
 			this.model = new BoxModel();
@@ -6,12 +8,11 @@ define(['backbone', 'app/models/box'], function(Backbone, BoxModel) {
 		events: {
 			'click .click': 'boxClicked'
 		},
-		boxClicked: function(event) {
+		boxClicked: function() {
 			var time = new Date();
 			this.model.set({
-				time: time.toDateString()
+				time: time.toTimeString()
 			});
-			console.log(this);
 		}
 	});
 });

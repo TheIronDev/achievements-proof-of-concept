@@ -19,13 +19,14 @@ require([
 ], function($, BoxView, Achievements){
 
 	$(document).ready(function(){
-		var boxView1 = new BoxView({
-			'el': '#box1'
-		});
-		var boxView2 = new BoxView({
-			'el': '#box2'
-		});
+		var boxView1 = new BoxView({'el': '#box1'}),
+			boxView2 = new BoxView({'el': '#box2'}),
+			boxView3 = new BoxView({'el': '#box3'});
 
 		var achievements = new Achievements({});
+
+		achievements.registerListenTo(boxView1.model, 'change', 'handleBox1Achievement');
+		achievements.registerListenTo(boxView2.model, 'change', 'handleBox2Achievement');
+		achievements.registerListenTo(boxView3.model, 'change', 'handleBox3Achievement');
 	});
 });
