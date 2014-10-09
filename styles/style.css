@@ -1,3 +1,10 @@
+* {box-sizing: border-box;}
+
+html {
+    height: 100%;
+    background: #efefef;
+}
+
 .box {
     border: 1px solid #ccc;
     height: 9em;
@@ -10,7 +17,7 @@
 .box .click {
     background: #66a;
     color: #fff;
-    height: 2.5em;
+    height: 3em;
     padding: 0.5em;
     cursor: pointer;
     z-index: 0;
@@ -22,4 +29,21 @@
     background: #f0f;
     transform: scale(2);
     box-shadow: 0 0 1em #666;
+}
+
+.achievement-content {
+    background: #fff;
+    box-shadow: 0 0 15px #ccc;
+    border: 1px solid #00A3CC;
+    position: fixed;
+    right: 1em;
+    bottom: -5.5em;
+    padding: 1em;
+    height: 5em;
+    width: 12em;
+    transition: all 1s ease;
+}
+
+.achievement-content.active {
+    bottom: 1em;
 }

@@ -26,10 +26,14 @@ define(['underscore', 'backbone', 'app/collections/achievements'],
 			 */
 			renderAchievement: function(achievement, event, options) {
 				if (achievement.get('achieved')) {
-					var catchPhrase = achievement.get('catchPhrase');
+					var catchPhrase = achievement.get('catchPhrase'),
+						$achievement = $('<div class="achievement-content"></div>');
 
-					// TODO, something cooler.
-					alert(catchPhrase)
+					$achievement.text(catchPhrase);
+					this.$el.append($achievement);
+
+					setTimeout(function(){$achievement.addClass('active');},0);
+					setTimeout(function() {$achievement.removeClass('active');}, 1500);
 				}
 			},
 			/**
